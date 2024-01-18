@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Check if dark mode preference is stored in localStorage
+            const isDarkMode = localStorage.getItem("darkMode") === "true";
+        
+            // Apply initial dark mode setting
+            if (isDarkMode) {
+                enableDarkMode();
+            }
+        
+            // Toggle dark mode on checkbox change
+            const darkModeToggle = document.getElementById("darkModeToggle");
+            darkModeToggle.addEventListener("change", function () {
+                if (darkModeToggle.checked) {
+                    enableDarkMode();
+                } else {
+                    disableDarkMode();
+                }
+            });
+        
+            // Function to enable dark mode
+            function enableDarkMode() {
+                document.body.classList.add("dark-mode");
+                localStorage.setItem("darkMode", "true");
+            }
+        
+            // Function to disable dark mode
+            function disableDarkMode() {
+                document.body.classList.remove("dark-mode");
+                localStorage.setItem("darkMode", "false");
+            }
+        });
+            var countDownDate = new Date("mar 2, 2024 16:00:00").getTime();
+            var x = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("demo").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+            }, 1000);
+        </script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+ 
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            transition: background-color 1s;
+        }
+
+        /* nav {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            height: 100px;
+            width: 100%;
+            display: flex;
+            background-color: greenyellow;
+            justify-content: space-evenly;
+            align-items: center;
+        } */
+
+        nav a {
+            font-size: 38pt;
+            text-decoration: none;
+        }
+
+        div.container {
+            min-width: 300px;
+            max-width: 500px;
+            margin: 0px auto;
+            margin-top: 100px;
+        }
+
+        section.page {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #6666ff;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p, h1{
+            text-align: center;
+            color: white;
+        }
+
+        section.page.one {
+            gap: 300pt;
+        }
+
+        section.page.one > div > h1 {
+            font-size: 30pt;
+        }
+
+        section.page.two {
+            justify-content: space-evenly;
+            padding: 20px;
+        }
+
+        div.card {
+            padding: 10pt;
+            width: 250pt;
+            min-height: 300pt;
+            background-color: gray;
+            border-radius: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        /* div.circle {
+            width: 150pt;
+            height: 150pt;
+            border-radius: 75pt;
+            background-color: greenyellow;
+            margin-bottom: 50px;
+        } */
+
+        /* div.line {
+            width: 150px;
+            height: 1px;
+            background-color: black;
+            margin: 10px auto;
+        } */
+
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .toggle-container {
+            margin-bottom: 20px;
+        }
+
+        #demo{
+            font-size: 70px;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="page one" id="home">
+            <div class="title">
+                <p>Mari Datang Ke Syukuran Atas Terpilihnya</p>
+                <h1>Dr. Logitech, Ph.D., PnG., JpG., Raw., S.kom <br>
+                    Sebagai Anggota DPRD Lampung</h1>
+                <p>Minggu, 17 September 2023</p>
+            </div>
+            
+            <p id="demo"></p>
+
+            <div class="toggle-container">
+                <label for="darkModeToggle">Dark Mode:</label>
+                <input type="checkbox" id="darkModeToggle">
+            </div>
+
+            <div class="guest-name">
+                <p>Kepada Yth.</p>
+                <p>Dodi, Ph.D.</p>
+            </div>
+        </section>
+        <section class="page two">
+            <h2>The Beloved</h2>
+            <h1>Budi & Cindy</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae unde eius exercitationem nobis, vitae deleniti dolore ipsum autem minus labore cupiditate quaerat. Officiis, voluptatum repudiandae architecto eligendi et at perferendis.</p>
+            <div class="card">
+                <div class="circle"></div>
+                <h1>Cindy Gunawan Siregar,S.Pd.</h1>
+                <div class="line"></div>
+                <p>Putri Pertama</p>
+                <p>Bapak Syamsudin</p>
+                <p>&</p>
+                <p>Ibu Sumiati</p>
+            </div>
+        </section>
+        <section class="page">
+            <h1>Contact us for more info</h1>
+            <p><a href="wa.me/6282373059198">Contact me!</a></p>
+        </section>
+    </div>
+</body>
+</html>
